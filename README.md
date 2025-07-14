@@ -6,7 +6,7 @@ Comandos para ejecutarlo local:
   cd frontend
   npm run dev
 
-  <img width="1438" height="826" alt="Captura de pantalla 2025-07-13 215732" src="https://github.com/user-attachments/assets/d6909257-9094-4a9a-a502-3b09d025b34e" />
+<img width="1501" height="842" alt="Captura de pantalla 2025-07-13 220033" src="https://github.com/user-attachments/assets/d0d574d9-9a04-4e2b-b76e-a533af744b16" />
 <img width="1497" height="853" alt="Captura de pantalla 2025-07-13 215619" src="https://github.com/user-attachments/assets/d0053fb0-d848-44b7-8a02-58a8c3f867a4" />
 <img width="1457" height="838" alt="Captura de pantalla 2025-07-13 215629" src="https://github.com/user-attachments/assets/aed62fa0-d243-44bc-89b1-ee6ddfc170bf" />
 <img width="1408" height="802" alt="Captura de pantalla 2025-07-13 215659" src="https://github.com/user-attachments/assets/b64798a3-3c68-4840-a396-e0bb85094d91" />
