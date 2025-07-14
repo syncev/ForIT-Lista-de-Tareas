@@ -1,8 +1,8 @@
 import React, { use, useState, useContext } from "react";
 
-import {APIcontext} from "../context/APIContainer"
+import { APIcontext } from "../context/APIContainer";
 
-const TaskForm = ({  task = "", editHandle }) => {
+const TaskForm = ({ task = "", editHandle }) => {
   const [title, setTaskTitle] = useState(task.title || "");
   const [description, setTaskDescription] = useState(task.description || "");
 
@@ -10,7 +10,7 @@ const TaskForm = ({  task = "", editHandle }) => {
   const { editTask } = useContext(APIcontext);
   const handleSubmit = (event) => {
     event.preventDefault();
-//si no hay tarea, crear una nueva con estados actuales, llamar a la funcion que hace el POST y limpiar estados
+    //si no hay tarea, crear una nueva con estados actuales, llamar a la funcion que hace el POST y limpiar estados
     if (!task) {
       const newTask = {
         title,
@@ -19,8 +19,8 @@ const TaskForm = ({  task = "", editHandle }) => {
       createTask(newTask);
       setTaskTitle("");
       setTaskDescription("");
-    
-//si hay tarea llamar a la funcion que hace el PUT y luego togglear boton de edicion
+
+      //si hay tarea llamar a la funcion que hace el PUT y luego togglear boton de edicion
     } else {
       const existingTask = {
         id: task.id,
@@ -28,13 +28,14 @@ const TaskForm = ({  task = "", editHandle }) => {
         description,
       };
       editTask(existingTask);
-      editHandle()
+      editHandle();
     }
   };
   return (
     <>
       <form onSubmit={handleSubmit} className="taskFormWrapper">
-        <input className="titleInput"
+        <input
+          className="titleInput"
           placeholder="Titulo de la tarea"
           id="title"
           value={title}
@@ -42,7 +43,8 @@ const TaskForm = ({  task = "", editHandle }) => {
             setTaskTitle(e.target.value);
           }}
         />
-        <textarea className="descriptionInput"
+        <textarea
+          className="descriptionInput"
           type="text"
           placeholder="Descripcion de la tarea"
           id="description"

@@ -78,12 +78,7 @@ app.put("/api/tasks/:id", (req, res) => {
     });
   }
 
-  // if(foundTask.completed != reqData.completed){
 
-  //   foundTask.completeTask()
-
-  //   // return res.status(204).send("Tarea completada")
-  // }
 
   //Si todo va bien, se actualiza la tarea correspondiendte con los valores del body
   foundTask.updateTask(title, description, completed);

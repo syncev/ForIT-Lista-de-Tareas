@@ -12,25 +12,24 @@ const TaskItem = ({ task }) => {
   //trae de contexto la funcion remover que hace llamada DELETE y la que hace PUT para completar tarea
   const { removeTask, finishTask } = useContext(APIcontext);
 
-
   //cambia el estado de editable de una tarea, la llamada  de la funcion que hace PUT se hace en el formulario de tarea
   const editHandle = () => {
     setEdit(!edit);
   };
 
+  //cambia estado de completado de una tarea y llama a la funcion que hace el PUT
   const completHandle = (task) => {
     task.completed = !task.completed;
-    finishTask(task)
-    
+    finishTask(task);
   };
 
   return (
     <>
-      {/*si editar esta habilitado se muestra el formulario de edicion y le pasa la tarea, sino se muestra la tarea y el titulo fijo*/}
+      {/*si editar esta habilitado se muestra el formulario de edicion y le pasa la tarea, sino se muestra la tarea y el titulo fijo. Si la tarea estas completada se agrega la clase taskCompleted para estilar la tarea*/}
       {edit ? (
-        <TaskForm task={task} editHandle={editHandle}  />
-      ) : (
-        <div className={`taskWrapper ${task.completed ? "taskCompleted" : ""}`} >
+        <TaskForm task={task} editHandle={editHandle} />
+        ) : (
+        <div className={`taskWrapper ${task.completed ? "taskCompleted" : ""}`}>
           <h3 className="taskTitle">{task.title}</h3>
           <p className="taskDescription">{task.description}</p>
         </div>

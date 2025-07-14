@@ -58,7 +58,6 @@ export const APIprovider = ({ children }) => {
         console.log("fallo al crear tarea")
       }
     } catch (error) {
-      //atajar errores
       console.log("algo fallo ", error);
     }
 
@@ -66,9 +65,9 @@ export const APIprovider = ({ children }) => {
   };
 
   const editTask = async (existingTask) => {
-    //intentar mandar la tarea nueva
+    //editar el titulo y descripcion de la tarea
     try {
-      const updateTask = await fetch(url + "/" + existingTask.id, {
+      const updateTask = await fetch(`${url}/${existingTask.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -86,6 +85,7 @@ export const APIprovider = ({ children }) => {
   };
 
   const finishTask = async ( existingTask) => {
+    //editar el "complete" de la tarea
     try{
       const completeTask = await fetch(`${url}/${existingTask.id}`, {
         method: "PUT",
